@@ -11,11 +11,11 @@ export const Joke = () => {
 
   useEffect(() => {
     trigger();
-  }, []);
+  }, [trigger]);
 
   useEffect(() => {
     if (result.isSuccess) dispatch(updateJoke(result.data.value));
-  }, [result.isSuccess]);
+  }, [result, dispatch]);
 
   return (
     <div>

@@ -5,7 +5,7 @@ import {
 } from "../../redux/api/apiSlice";
 import { useAppDispatch } from "../../redux/hooks";
 import { updateJoke } from "../../redux/reducers/jokeSlice";
-import { categoryImages } from "./utils";
+import { capitalizeFirstLetter, categoryImages } from "./utils";
 
 export const CategoryPicker = () => {
   const [value, setValue] = useState<string>("");
@@ -14,13 +14,9 @@ export const CategoryPicker = () => {
 
   const dispatch = useAppDispatch();
 
-  function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
   useEffect(() => {
     if (result.isSuccess) dispatch(updateJoke(result.data.value));
-  }, [result]);
+  }, [result, dispatch]);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value);
@@ -36,11 +32,7 @@ export const CategoryPicker = () => {
     ));
 
   return (
-    <div>
-      <select onChange={handleChange} value={value}>
-        <option value="">Select Category</option>
-        {renderCategories()}
-      </select>
+    <div className="category-picker">
       <div>
         <img
           src={categoryImages[value]}
@@ -48,8 +40,12 @@ export const CategoryPicker = () => {
           width="250"
           height="250"
         />
-        <h2>Chuck Norris</h2>
+        <h1>Chuck Norris</h1>
         <h3>Random Facts</h3>
+        <select onChange={handleChange} value={value}>
+          <option value="">Select Category</option>
+          {renderCategories()}
+        </select>
       </div>
     </div>
   );

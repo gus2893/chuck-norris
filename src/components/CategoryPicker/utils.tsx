@@ -28,3 +28,7 @@ export const categoryImages: { [char: string]: string } = {
   travel:
     "https://i.guim.co.uk/img/media/a054b27f71103433c0dc99bf1b2a33eca56e644c/0_596_2662_1598/master/2662.jpg?width=1200&quality=85&auto=format&fit=max&s=eff20cd5c2c5da4f519bf3ce6c0e89e3",
 } as const;
+
+export const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

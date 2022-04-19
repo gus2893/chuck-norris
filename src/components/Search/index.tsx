@@ -24,20 +24,20 @@ export const Search = () => {
       dispatch(updateJoke(result.data.value));
     else if (result.isSuccess)
       setError("No results found... probably hiding from Chuck Norris");
-  }, [result.isSuccess]);
+  }, [result, dispatch]);
 
   const handleSearch = async () => {
     trigger(value);
   };
 
   return (
-    <div>
+    <div className="search">
       <h2>Search for Facts</h2>
-      <input type="text" onChange={handleChange}></input>
-      <button disabled={error !== ""} onClick={handleSearch}>
+      <input type="text" onChange={handleChange} className="searchBar"></input>
+      <button className="btn" disabled={error !== ""} onClick={handleSearch}>
         Search
       </button>
-      <text>{error}</text>
+      <p>{error}</p>
     </div>
   );
 };
