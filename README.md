@@ -1,6 +1,6 @@
 ## GE-CHUCK NORRIS APPLICATION
 
-GE-Chuck Norris leverages the [chuck norris api](https://api.chucknorris.io/) to get random FACTS not jokes but FACTS. A working demo can be found [here]()
+GE-Chuck Norris leverages the [chuck norris api](https://api.chucknorris.io/) to get random FACTS not jokes but FACTS. A working demo can be found [here](https://main--scintillating-pony-f06dd2.netlify.app/)
 
 ## Run it locally
 
